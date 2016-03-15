@@ -206,10 +206,10 @@ class TentacleView: UIView {
             }
             
             if (success) {
-                CGContextSetRGBStrokeColor(context, 2/255, 174/255, 240/255, 0.7);//线条颜色
+                CGContextSetStrokeColorWithColor(context, UIColor(red: 2/255.0, green: 174/255.0, blue: 240/255.0, alpha: 0.7).CGColor)
             }
             else {
-                CGContextSetRGBStrokeColor(context, 208/255, 36/255, 36/255, 0.7);//红色
+                CGContextSetStrokeColorWithColor(context, UIColor(red: 208/255.0, green: 36/255.0, blue: 36/255.0, alpha: 0.7).CGColor)
             }
             
             CGContextSetLineWidth(context,5)

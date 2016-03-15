@@ -8,8 +8,16 @@
 
 import UIKit
 
+enum VerifyType{
+    case ToChange
+    case ToClean
+    case ToDismiss
+}
+
 class GesturePasswordControllerViewController: UIViewController,VerificationDelegate,ResetDelegate{
     
+    var type:VerifyType = VerifyType.ToDismiss
+
     var gesturePasswordView:GesturePasswordView!
     
     var previousString:String? = ""
@@ -49,8 +57,6 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
         gesturePasswordView.tentacleView!.resetDelegate = self
         gesturePasswordView.tentacleView!.style = 2
         gesturePasswordView.forgetButton!.hidden = true
-        gesturePasswordView.changeButton!.hidden = true
-        
         self.view.addSubview(gesturePasswordView)
         
     }
@@ -76,6 +82,14 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
             
             gesturePasswordView.state!.textColor = UIColor.whiteColor()
             gesturePasswordView.state!.text = "输入正确"
+            switch type{
+            case .ToDismiss:
+                self .dismissViewControllerAnimated(true, completion: nil)
+            case .ToChange:
+                self.reset()
+            case .ToClean:
+                self.clear()
+            }
             
             return true
         }

@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol GesturePasswordDelegate
+{
+    func forget()
+}
+
 class GesturePasswordView: UIView,TouchBeginDelegate {
     
     var tentacleView:TentacleView?
@@ -18,7 +23,7 @@ class GesturePasswordView: UIView,TouchBeginDelegate {
     
     var forgetButton:UIButton?
     
-    var changeButton:UIButton?
+    var gesturePasswordDelegate:GesturePasswordDelegate?
     
     private var buttonArray:[CircleViewItem]=[]
     
@@ -78,17 +83,6 @@ class GesturePasswordView: UIView,TouchBeginDelegate {
         forgetButton!.setTitle("忘记手势密码", forState: UIControlState.Normal)
         forgetButton!.addTarget(self, action: Selector("forget"), forControlEvents: UIControlEvents.TouchDown)
         self.addSubview(forgetButton!)
-        
-        
-        changeButton = UIButton(frame:CGRectMake(frame.size.width/2+30, frame.size.height/2+220, 120, 30))
-        changeButton!.titleLabel?.font = UIFont.systemFontOfSize(14)
-        changeButton!.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        changeButton!.setTitle("修改手势密码", forState: UIControlState.Normal)
-        changeButton!.addTarget(self, action: Selector("change"), forControlEvents: UIControlEvents.TouchDown)
-        self.addSubview(changeButton!)
-        
-        
-        
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -117,5 +111,12 @@ class GesturePasswordView: UIView,TouchBeginDelegate {
     func gestureTouchBegin(){
         
         self.state!.text = ""
+    }
+    
+    func forget(){
+     print(__FUNCTION__)
+        if(gesturePasswordDelegate != nil){
+            gesturePasswordDelegate!.forget()
+        }
     }
 }
