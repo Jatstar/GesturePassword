@@ -10,13 +10,13 @@
 		4575C6E21C96B57B0012F49B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C6E11C96B57B0012F49B /* AppDelegate.swift */; };
 		4575C6E41C96B57B0012F49B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C6E31C96B57B0012F49B /* ViewController.swift */; };
 		4575C6E91C96B57B0012F49B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4575C6E81C96B57B0012F49B /* Assets.xcassets */; };
-		4575C6EC1C96B57B0012F49B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4575C6EA1C96B57B0012F49B /* LaunchScreen.storyboard */; };
 		4575C6F71C96B57B0012F49B /* GesturePasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C6F61C96B57B0012F49B /* GesturePasswordTests.swift */; };
 		4575C7021C96B57B0012F49B /* GesturePasswordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C7011C96B57B0012F49B /* GesturePasswordUITests.swift */; };
 		4575C7111C96B7B80012F49B /* CircleViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C7101C96B7B80012F49B /* CircleViewItem.swift */; };
 		4575C7131C96F1930012F49B /* TentacleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C7121C96F1930012F49B /* TentacleView.swift */; };
 		4575C7151C96F71C0012F49B /* GesturePasswordControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C7141C96F71C0012F49B /* GesturePasswordControllerViewController.swift */; };
 		4575C7171C96F7E60012F49B /* GesturePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C7161C96F7E60012F49B /* GesturePasswordView.swift */; };
+		459D47501C99AD86007F5587 /* GesturePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D474F1C99AD86007F5587 /* GesturePasswordModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 		4575C6E11C96B57B0012F49B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4575C6E31C96B57B0012F49B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4575C6E81C96B57B0012F49B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4575C6EB1C96B57B0012F49B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4575C6ED1C96B57B0012F49B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4575C6F21C96B57B0012F49B /* GesturePasswordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GesturePasswordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4575C6F61C96B57B0012F49B /* GesturePasswordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturePasswordTests.swift; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		4575C7121C96F1930012F49B /* TentacleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TentacleView.swift; sourceTree = "<group>"; };
 		4575C7141C96F71C0012F49B /* GesturePasswordControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePasswordControllerViewController.swift; sourceTree = "<group>"; };
 		4575C7161C96F7E60012F49B /* GesturePasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePasswordView.swift; sourceTree = "<group>"; };
+		459D474F1C99AD86007F5587 /* GesturePasswordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePasswordModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,6 @@
 				4575C6E11C96B57B0012F49B /* AppDelegate.swift */,
 				4575C6E31C96B57B0012F49B /* ViewController.swift */,
 				4575C6E81C96B57B0012F49B /* Assets.xcassets */,
-				4575C6EA1C96B57B0012F49B /* LaunchScreen.storyboard */,
 				4575C6ED1C96B57B0012F49B /* Info.plist */,
 			);
 			path = GesturePassword;
@@ -138,6 +137,7 @@
 				4575C7121C96F1930012F49B /* TentacleView.swift */,
 				4575C7141C96F71C0012F49B /* GesturePasswordControllerViewController.swift */,
 				4575C7161C96F7E60012F49B /* GesturePasswordView.swift */,
+				459D474F1C99AD86007F5587 /* GesturePasswordModel.swift */,
 			);
 			path = GesturePassword;
 			sourceTree = "<group>";
@@ -249,7 +249,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4575C6EC1C96B57B0012F49B /* LaunchScreen.storyboard in Resources */,
 				4575C6E91C96B57B0012F49B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +277,7 @@
 				4575C7131C96F1930012F49B /* TentacleView.swift in Sources */,
 				4575C7171C96F7E60012F49B /* GesturePasswordView.swift in Sources */,
 				4575C6E41C96B57B0012F49B /* ViewController.swift in Sources */,
+				459D47501C99AD86007F5587 /* GesturePasswordModel.swift in Sources */,
 				4575C7151C96F71C0012F49B /* GesturePasswordControllerViewController.swift in Sources */,
 				4575C6E21C96B57B0012F49B /* AppDelegate.swift in Sources */,
 				4575C7111C96B7B80012F49B /* CircleViewItem.swift in Sources */,
@@ -314,17 +314,6 @@
 			targetProxy = 4575C6FE1C96B57B0012F49B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		4575C6EA1C96B57B0012F49B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4575C6EB1C96B57B0012F49B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4575C7041C96B57B0012F49B /* Debug */ = {

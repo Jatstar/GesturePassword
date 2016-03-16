@@ -21,16 +21,14 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
     var gesturePasswordView:GesturePasswordView!
     
     var previousString:String? = ""
-    var password:String? = ""
     
-    var secKey:String = "GesturePassword"
-    
+    var password:String? = GesturePasswordModel.getGesturePassword()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         previousString = ""
-        password = NSUserDefaults.standardUserDefaults().objectForKey(secKey) as? String
+
         if( password == "" || password == nil){
             
             self.reset()
@@ -61,22 +59,6 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
         
     }
     
-    func exist()->Bool{
-        
-        
-        password = NSUserDefaults.standardUserDefaults().objectForKey(secKey) as? String
-        if password == "" {
-            return false
-        }
-        return true
-    }
-    
-    //MARK: - 清空记录
-    func clear(){
-        
-        NSUserDefaults.standardUserDefaults().removeObjectForKey(secKey)
-    }
-    
     func verification(result:String)->Bool{
         if(result == password){
             
@@ -88,7 +70,7 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
             case .ToChange:
                 self.reset()
             case .ToClean:
-                self.clear()
+                GesturePasswordModel.clear()
             }
             
             return true
@@ -113,7 +95,7 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
                 
                 
                 
-                NSUserDefaults.standardUserDefaults().setObject(result, forKey: secKey)
+                GesturePasswordModel.saveGesturePassword(result)
                 
                 gesturePasswordView.state!.textColor = UIColor(red: 2/255, green: 174/255, blue: 240/255, alpha: 1)
                 gesturePasswordView.state!.text = "已保存手势密码"

@@ -9,6 +9,12 @@
 import UIKit
 
 class ViewController: UITableViewController {
+    var listData = ["手势密码","修改手势密码"]
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+//        if
+        
+    }
     
 }
 
