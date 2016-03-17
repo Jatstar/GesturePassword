@@ -3,11 +3,11 @@
 
 ## 简介
 
-### Swift2.0实现的手势密码
+> Swift2.0实现的手势密码
 
-### 参考[GesturePassword](https://github.com/smilingxinyi/GesturePassword)
+> 参考[GesturePassword](https://github.com/smilingxinyi/GesturePassword)
 
-### 使用`UserDefaults`简单存储,需求使用keychain可以更改一下[Model](GesturePassword/GesturePassword/GesturePassword/GesturePasswordModel.swift)
+> 使用`UserDefaults`简单存储,需求使用keychain可以更改一下[Model](https://github.com/Jatstar/GesturePassword/blob/master/GesturePassword/GesturePassword/GesturePasswordModel.swift)
 
 ## Demo
 
