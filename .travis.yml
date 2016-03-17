@@ -1,2 +1,4 @@
 language: objective-c
-script: xcodebuild -workspace GesturePassword.xcodeproj -scheme GesturePassword -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+xcode_project: GesturePassword.xcodeproj
+xcode_scheme: GesturePassword
+xcode_sdk: iphonesimulator
