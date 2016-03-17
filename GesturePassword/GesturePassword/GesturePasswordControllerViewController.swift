@@ -43,6 +43,8 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
         
         gesturePasswordView = GesturePasswordView(frame: UIScreen.mainScreen().bounds)
         gesturePasswordView.tentacleView!.rerificationDelegate = self
+        gesturePasswordView.state!.textColor = UIColor(red: 2/255, green: 174/255, blue: 240/255, alpha: 1)
+        gesturePasswordView.state?.text = "请验证手势密码"
         gesturePasswordView.tentacleView!.style = 1
         self.view.addSubview(gesturePasswordView)
         
@@ -54,6 +56,9 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
         gesturePasswordView = GesturePasswordView(frame: UIScreen.mainScreen().bounds)
         gesturePasswordView.tentacleView!.resetDelegate = self
         gesturePasswordView.tentacleView!.style = 2
+        gesturePasswordView.state!.textColor = UIColor(red: 2/255, green: 174/255, blue: 240/255, alpha: 1)
+        gesturePasswordView.state?.text = "请设置手势密码"
+
         gesturePasswordView.forgetButton!.hidden = true
         self.view.addSubview(gesturePasswordView)
         
@@ -62,15 +67,16 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
     func verification(result:String)->Bool{
         if(result == password){
             
-            gesturePasswordView.state!.textColor = UIColor.whiteColor()
+            gesturePasswordView.state!.textColor = UIColor(red: 2/255, green: 174/255, blue: 240/255, alpha: 1)
             gesturePasswordView.state!.text = "输入正确"
             switch type{
             case .ToDismiss:
-                self .dismissViewControllerAnimated(true, completion: nil)
+                self.dismissViewControllerAnimated(true, completion: nil)
             case .ToChange:
                 self.reset()
             case .ToClean:
                 GesturePasswordModel.clear()
+                self.dismissViewControllerAnimated(true, completion: nil)
             }
             
             return true
@@ -86,7 +92,7 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
             previousString = result
             gesturePasswordView.tentacleView!.enterArgin()
             gesturePasswordView.state!.textColor = UIColor(red: 2/255, green: 174/255, blue: 240/255, alpha: 1)
-            gesturePasswordView.state!.text = "请验证输入密码"
+            gesturePasswordView.state!.text = "请再次输入新密码"
             
             return true
         }else{
@@ -99,8 +105,7 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
                 
                 gesturePasswordView.state!.textColor = UIColor(red: 2/255, green: 174/255, blue: 240/255, alpha: 1)
                 gesturePasswordView.state!.text = "已保存手势密码"
-                
-                
+                self.dismissViewControllerAnimated(true, completion: nil)
                 return true;
             }else{
                 previousString = "";

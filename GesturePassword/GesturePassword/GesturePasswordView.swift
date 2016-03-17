@@ -71,9 +71,11 @@ class GesturePasswordView: UIView,TouchBeginDelegate {
         self.addSubview(state!)
         
         imgView = UIImageView(frame:CGRectMake(frame.size.width/2-35, frame.size.width/2-80, 70, 70))
+        imgView?.image = UIImage(named:"appicon")
         imgView?.backgroundColor = UIColor.whiteColor()
+        imgView?.layer.masksToBounds = true
         imgView!.layer.cornerRadius = 35
-        imgView!.layer.borderColor = UIColor.grayColor().CGColor
+        imgView!.layer.borderColor = UIColor.whiteColor().CGColor
         imgView!.layer.borderWidth = 3
         self.addSubview(imgView!)
         
