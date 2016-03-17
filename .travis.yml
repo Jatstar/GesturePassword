@@ -2,3 +2,6 @@ language: objective-c
 xcode_project: GesturePassword.xcodeproj
 xcode_scheme: GesturePassword
 xcode_sdk: iphonesimulator
+osx_image: xcode7.2
+script:
+ -scheme GesturePassword
