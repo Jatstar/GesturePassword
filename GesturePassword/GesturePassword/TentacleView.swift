@@ -76,7 +76,7 @@ class TentacleView: UIView {
             touchPoint = touch!.locationInView(self)
             
             
-            for(var i=0;i<buttonArray.count;i++){
+            for(var i=0;i<buttonArray.count;i += 1){
                 
                 let buttonTemp = buttonArray[i]
                 buttonTemp.success = true
@@ -115,7 +115,7 @@ class TentacleView: UIView {
             
             touchPoint = touch!.locationInView(self)
             
-            for(var i=0;i<buttonArray.count;i++){
+            for(var i=0;i<buttonArray.count;i += 1){
                 
                 let buttonTemp = buttonArray[i]
                 
@@ -196,7 +196,7 @@ class TentacleView: UIView {
             return;
         }
         
-        for var i=0;i<touchesArray.count;i++ {
+        for var i=0;i<touchesArray.count;i += 1 {
             
             let context:CGContextRef = UIGraphicsGetCurrentContext()!
             
@@ -238,7 +238,7 @@ class TentacleView: UIView {
         touchesArray.removeAll()
         touchedArray.removeAll()
         
-        for(var i=0;i<buttonArray.count;i++){
+        for(var i=0;i<buttonArray.count;i += 1){
             
             let buttonTemp = buttonArray[i]
             buttonTemp.success = true

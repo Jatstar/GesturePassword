@@ -83,7 +83,7 @@ class GesturePasswordView: UIView,TouchBeginDelegate {
         forgetButton!.titleLabel?.font = UIFont.systemFontOfSize(14)
         forgetButton!.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         forgetButton!.setTitle("忘记手势密码", forState: UIControlState.Normal)
-        forgetButton!.addTarget(self, action: Selector("forget"), forControlEvents: UIControlEvents.TouchDown)
+        forgetButton!.addTarget(self, action: #selector(GesturePasswordView.forget), forControlEvents: UIControlEvents.TouchDown)
         self.addSubview(forgetButton!)
     }
     
@@ -116,7 +116,7 @@ class GesturePasswordView: UIView,TouchBeginDelegate {
     }
     
     func forget(){
-     print(__FUNCTION__)
+     print(#function)
         if(gesturePasswordDelegate != nil){
             gesturePasswordDelegate!.forget()
         }

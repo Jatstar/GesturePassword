@@ -29,7 +29,7 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
         
         previousString = ""
 
-        if( password == "" || password == nil){
+        if password == "" || password == nil {
             
             self.reset()
         }
@@ -38,6 +38,21 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
         }
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if type == .ToDismiss {
+            UIApplication.sharedApplication().delegate?.window!?.windowLevel = UIWindowLevelAlert + 1
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        if type == .ToDismiss {
+            UIApplication.sharedApplication().delegate?.window!?.windowLevel = UIWindowLevelNormal
+        }
+    }
+    
     //MARK: - 验证手势密码
     func verify(){
         
@@ -65,7 +80,7 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
     }
     
     func verification(result:String)->Bool{
-        if(result == password){
+        if result == password {
             
             gesturePasswordView.state!.textColor = UIColor(red: 2/255, green: 174/255, blue: 240/255, alpha: 1)
             gesturePasswordView.state!.text = "输入正确"
@@ -88,7 +103,7 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
     
     func resetPassword(result: String) -> Bool {
         
-        if(previousString == ""){
+        if previousString == "" {
             previousString = result
             gesturePasswordView.tentacleView!.enterArgin()
             gesturePasswordView.state!.textColor = UIColor(red: 2/255, green: 174/255, blue: 240/255, alpha: 1)
@@ -97,7 +112,7 @@ class GesturePasswordControllerViewController: UIViewController,VerificationDele
             return true
         }else{
             
-            if(result == previousString){
+            if result == previousString {
                 
                 
                 

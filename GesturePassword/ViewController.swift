@@ -27,7 +27,7 @@ class ViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if GesturePasswordModel.existGesturePassword(){
-            listData = ["手势密码","修改手势密码"]
+            listData = ["手势密码","修改手势密码","alertView测试"]
         }else{
             listData = ["手势密码"]
         }
@@ -54,7 +54,7 @@ extension ViewController {
         if indexPath.row == 0{
             let swich = UISwitch()
             swich.on = GesturePasswordModel.existGesturePassword()
-            swich.addTarget(self, action: "passwordAction:", forControlEvents: .ValueChanged)
+            swich.addTarget(self, action: #selector(ViewController.passwordAction(_:)), forControlEvents: .ValueChanged)
             cell.accessoryView = swich
         }
         return cell
@@ -62,6 +62,21 @@ extension ViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        switch indexPath.row {
+        case 0:
+            break
+        case 2:
+            let alertView = UIAlertView.init(title: "测试", message: "测试", delegate: nil, cancelButtonTitle: "取消")
+            alertView.show()
+            break
+        default:
+            break
+            
+        }
+        
+        
+        
+        
         if indexPath.row == 1{
             let vc = GesturePasswordControllerViewController()
             vc.type = VerifyType.ToChange
